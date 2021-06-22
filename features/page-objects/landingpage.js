@@ -95,7 +95,10 @@ getDisconnectButton(){
 }
 
 clickDisconnectButton(){ 
-    this.browser.maximizeWindow()
+      this.browser.execute(() => {
+        const img = document.querySelector('img[alt="Fork me on GitHub"]');
+        img.remove();
+    });
     this.getDisconnectButton().click()
 }
 
